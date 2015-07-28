@@ -1,0 +1,17 @@
+package mamba2410.test.item.tools.parts;
+
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import mamba2410.test.item.parents.SubItemCore;
+import mamba2410.test.lib.MetadataItemNames;
+
+public class ToolRod extends SubItemCore{
+
+	public ToolRod() {
+		super("ToolRod", "rod_", MetadataItemNames.RodNames.clone(), "Rod");
+		setTextureName("minecraft:nether_brick");
+		for(int i = 0; i < MetadataItemNames.RodNames.length; i++)
+			LanguageRegistry.instance().addStringLocalization("item." + MetadataItemNames.RodNames[i] + "Rod.name", "en_US",
+					MetadataItemNames.RodNames[i] +" Rod");
+	}
+
+}

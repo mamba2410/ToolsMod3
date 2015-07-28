@@ -1,0 +1,25 @@
+package mamba2410.toolsmod3.util;
+
+import mamba2410.toolsmod3.ToolsMod;
+
+public class BlockHandler {
+	
+	public static BlockHandler instance;
+	public static ToolsMod modinstance;
+	
+	private void initBlocks(){
+		
+	}
+	
+	public void PreInit(){
+		initBlocks();
+	}
+	public void Init(){}
+	public void PostInit(){}
+	
+	public BlockHandler(ToolsMod mod){
+		instance = this;
+		modinstance = mod;
+	}
+
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ToolsMod3",
+  "name": "Tools Mod 3",
+  "description": "The third rework from the ground up of Mamba2410's Tools Mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["mamba2410"],
+  "credits": "mDiyo / Boni for allowing Tinker's Construct to be open source so I could have a peek at the rendering code. Thank You!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

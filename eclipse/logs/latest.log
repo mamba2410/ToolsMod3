@@ -1,0 +1,54 @@
+[12:37:02] [main/INFO]: Setting user: Player366
+[12:37:04] [Client thread/INFO]: LWJGL Version: 2.9.1
+[12:37:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Tools Mod 3
+[12:37:12] [Sound Library Loader/INFO]: Sound engine started
+[12:37:15] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[12:37:15] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[12:37:15] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Tools Mod 3
+[12:37:16] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[12:37:16] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:37:17] [Sound Library Loader/INFO]: Sound engine started
+[12:37:26] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[12:37:26] [Server thread/INFO]: Generating keypair
+[12:37:27] [Server thread/INFO]: Preparing start region for level 0
+[12:37:27] [Server thread/INFO]: Changing view distance to 12, from 10
+[12:37:28] [Server thread/INFO]: Player366[local:E:36d5a4a9] logged in with entity id 1 at (-10.157226703078488, 63.0, 467.0179876735954)
+[12:37:28] [Server thread/INFO]: Player366 joined the game
+[12:37:44] [Server thread/INFO]: Player366 has just earned the achievement [Taking Inventory]
+[12:37:44] [Client thread/INFO]: [CHAT] Player366 has just earned the achievement [Taking Inventory]
+[12:38:08] [Server thread/INFO]: [Player366: Given [Spawn Iron Golem] * 64 to Player366]
+[12:38:08] [Client thread/INFO]: [CHAT] Given [Spawn Iron Golem] * 64 to Player366
+[12:38:13] [Server thread/INFO]: [Player366: Given [Steak] * 64 to Player366]
+[12:38:13] [Client thread/INFO]: [CHAT] Given [Steak] * 64 to Player366
+[12:39:26] [Server thread/INFO]: [Player366: Given [Arrow] * 5 to Player366]
+[12:39:26] [Client thread/INFO]: [CHAT] Given [Arrow] * 5 to Player366
+[12:39:27] [Server thread/INFO]: [Player366: Given [Celestial Obsidian Rod] * 2 to Player366]
+[12:39:27] [Client thread/INFO]: [CHAT] Given [Celestial Obsidian Rod] * 2 to Player366
+[12:40:39] [Client thread/INFO]: [CHAT] /xp <amount> [player] OR /xp <amount>L [player]
+[12:40:54] [Server thread/INFO]: [Player366: Given 0 levels to Player366]
+[12:40:54] [Client thread/INFO]: [CHAT] Given 0 levels to Player366
+[12:41:10] [Server thread/INFO]: [Player366: Taken 65344 levels from Player366]
+[12:41:10] [Client thread/INFO]: [CHAT] Taken 65344 levels from Player366
+[12:41:14] [Server thread/INFO]: [Player366: Taken 65344 levels from Player366]
+[12:41:14] [Client thread/INFO]: [CHAT] Taken 65344 levels from Player366
+[12:41:35] [Server thread/INFO]: [Player366: Given 32727 experience to Player366]
+[12:41:35] [Client thread/INFO]: [CHAT] Given 32727 experience to Player366
+[12:41:48] [Server thread/INFO]: [Player366: Taken 32727 levels from Player366]
+[12:41:48] [Client thread/INFO]: [CHAT] Taken 32727 levels from Player366
+[12:41:52] [Server thread/INFO]: [Player366: Given 32727 levels to Player366]
+[12:41:52] [Client thread/INFO]: [CHAT] Given 32727 levels to Player366
+[12:42:03] [Server thread/INFO]: [Player366: Given [Universe Bow Head] * 1 to Player366]
+[12:42:03] [Client thread/INFO]: [CHAT] Given [Universe Bow Head] * 1 to Player366
+[12:42:07] [Server thread/INFO]: [Player366: Given [String Bowstring] * 1 to Player366]
+[12:42:07] [Client thread/INFO]: [CHAT] Given [String Bowstring] * 1 to Player366
+[12:42:40] [Server thread/INFO]: Saving and pausing game...
+[12:42:40] [Server thread/INFO]: Saving chunks for level 'TEst'/Overworld
+[12:42:40] [Server thread/INFO]: Saving chunks for level 'TEst'/Nether
+[12:42:40] [Server thread/INFO]: Saving chunks for level 'TEst'/The End
+[12:42:40] [Server thread/INFO]: Stopping server
+[12:42:40] [Server thread/INFO]: Saving players
+[12:42:40] [Server thread/INFO]: Saving worlds
+[12:42:40] [Server thread/INFO]: Saving chunks for level 'TEst'/Overworld
+[12:42:40] [Server thread/INFO]: Saving chunks for level 'TEst'/Nether
+[12:42:40] [Server thread/INFO]: Saving chunks for level 'TEst'/The End
+[12:42:41] [Client thread/INFO]: Stopping!

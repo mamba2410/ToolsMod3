@@ -1,0 +1,20 @@
+package mamba2410.test.item.tools.parts;
+
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.item.ItemStack;
+import mamba2410.test.item.parents.SubItemCore;
+import mamba2410.test.lib.MetadataItemNames;
+
+public class ToolHead extends SubItemCore{
+	
+	public ItemStack material;
+
+	public ToolHead(String type) {
+		super("ToolHead" + type, "", MetadataItemNames.HeadNames.clone(), type + "Head");
+		setTextureName("minecraft:brick");
+		for(int i = 0; i < MetadataItemNames.HeadNames.length; i++)
+		LanguageRegistry.instance().addStringLocalization("item." + MetadataItemNames.HeadNames[i] + type + "Head.name", "en_US",
+				MetadataItemNames.HeadNames[i] + " " + type + " Head");
+	}
+
+}

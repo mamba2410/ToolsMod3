@@ -1,0 +1,21 @@
+package mamba2410.toolsmod3.lib;
+
+public class MetadataItemNames {
+	
+	public static final String[] HeadNames = {
+		
+	};
+	
+	public static final String[] RodNames = {
+		
+	};
+	
+	public static final String[] MaterialNames = {
+		
+	};
+	
+	public static final String[] CelestialNames = {
+		
+	};
+
+}

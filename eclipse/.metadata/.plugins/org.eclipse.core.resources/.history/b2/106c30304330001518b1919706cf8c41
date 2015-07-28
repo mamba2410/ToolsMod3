@@ -1,0 +1,48 @@
+package mamba2410.toolsmod3.util;
+
+import mamba2410.toolsmod3.ToolsMod;
+import net.minecraftforge.common.config.Configuration;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+public class ConfigHandler {
+	
+	public static ConfigHandler instance;
+	public static ToolsMod modinstance;
+	public static Configuration config;
+	
+	public static final String celestial_NAME = "Enable or disable the celestial section of the mod.";
+	public static final String celestial_tools_NAME = "Enable or disable the celestial tools. (Requires celestial to be true)";
+	
+	public static final boolean DEFAULT_celestial = true;
+	public static final boolean DEFAULT_celestial_tools = false;
+	
+	public static boolean celestial = true;
+	public static boolean celestial_tools = false;
+	
+	private void syncConfig(){
+		FMLCommonHandler.instance().bus().register(modinstance);
+		
+		celestial = config.get(config.CATEGORY_GENERAL, celestial_NAME, DEFAULT_celestial).getBoolean(DEFAULT_celestial);
+		
+		celestial_tools = config.get(config.CATEGORY_GENERAL, celestial_tools_NAME, DEFAULT_celestial_tools).getBoolean(DEFAULT_celestial_tools);
+		
+		if(config.hasChanged())
+			config.save();
+	}
+	
+	public void PreInit(FMLPreInitializationEvent e){
+		config = new Configuration(e.getSuggestedConfigurationFile());
+		syncConfig();
+	}
+	public void Init(){}
+	public void PostInit(){}
+	
+	
+	
+	public ConfigHandler(ToolsMod mod){
+		instance = this;
+		modinstance = mod;
+	}
+
+}

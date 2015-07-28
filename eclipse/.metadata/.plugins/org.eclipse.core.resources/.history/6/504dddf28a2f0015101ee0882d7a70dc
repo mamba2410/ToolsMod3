@@ -1,0 +1,36 @@
+package mamba2410.toolsmod3.util;
+
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import mamba2410.toolsmod3.ToolsMod;
+import mamba2410.toolsmod3.item.tools.CustomNinjaken;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
+public class UtilEventHandler {
+	
+	public static UtilEventHandler instance;
+	private static ToolsMod modinstance;
+	
+	public UtilEventHandler(ToolsMod mod){
+		modinstance = mod;
+		instance = this;
+		MinecraftForge.EVENT_BUS.register(this);
+		FMLCommonHandler.instance().bus().register(this);
+	}
+	
+	@SubscribeEvent
+	public void onPlayerHit(LivingHurtEvent e){
+		if(e.entityLiving instanceof EntityPlayer){
+			EntityPlayer p = (EntityPlayer)e.entityLiving;
+			
+			if(p.getHeldItem().getItem() instanceof CustomNinjaken){
+				p.addPotionEffect(new PotionEffect(Potion.nightVision.id, 5, 1));
+			}
+		}
+	}
+
+}

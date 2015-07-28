@@ -1,0 +1,70 @@
+package mamba2410.toolsmod3;
+
+import mamba2410.toolsmod3.lib.ProxyCommon;
+import mamba2410.toolsmod3.lib.References;
+import mamba2410.toolsmod3.util.BlockHandler;
+import mamba2410.toolsmod3.util.CreativeTabsHandler;
+import mamba2410.toolsmod3.util.ItemHandler;
+import mamba2410.toolsmod3.util.LogHelper;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.Metadata;
+import cpw.mods.fml.common.ModMetadata;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+@Mod(modid=References.MODID, name=References.NAME, version=References.VERSION)
+public class ToolsMod {
+	
+	@Instance(References.MODID)
+	public static ToolsMod instance;
+	
+	@Metadata
+	public static ModMetadata modmeta;
+	
+	@SidedProxy(clientSide=References.PROXY_CLIENT, serverSide=References.PROXY_COMMON)
+	public static ProxyCommon proxy;
+	
+	@EventHandler
+	public void PreInit(FMLPreInitializationEvent e){
+		LogHelper.info("Pre Initialization Start");
+		initHandlers();
+		
+		creativetabshandler.PreInit();
+		itemhandler.PreInit();
+		blockhandler.PreInit();
+		
+		LogHelper.info("Pre Initialization Complete");
+	}
+	
+	@EventHandler
+	public void Init(FMLInitializationEvent e){
+		LogHelper.info("Initialization Start");
+		
+		
+		LogHelper.info("Initialization Complete");
+	}
+	
+	@EventHandler
+	public void PostInit(FMLPostInitializationEvent e){
+		LogHelper.info("Post Initialization Start");
+		
+		
+		
+		LogHelper.info("Post Initialization Complete");
+	}
+	
+	private void initHandlers(){
+		creativetabshandler = new CreativeTabsHandler(instance);
+		itemhandler = new ItemHandler(instance);
+		blockhandler = new BlockHandler(instance);
+	}
+	
+	public static ItemHandler itemhandler;
+	public static CreativeTabsHandler creativetabshandler;
+	public static BlockHandler blockhandler;
+
+}

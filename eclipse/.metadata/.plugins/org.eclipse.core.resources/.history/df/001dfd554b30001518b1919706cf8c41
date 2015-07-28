@@ -1,0 +1,55 @@
+package mamba2410.toolsmod3.util;
+
+import mamba2410.toolsmod3.ToolsMod;
+import net.minecraftforge.common.config.Configuration;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+public class ConfigHandler {
+	
+	public static ConfigHandler instance;
+	public static ToolsMod modinstance;
+	public static Configuration config;
+	
+	public static final String celestial_NAME = "Enable or disable the celestial section of the mod.";
+	public static final String celestial_tools_NAME = "Enable or disable the celestial tools. (Requires celestial to be true)";
+	public static final String enchant_repair_NAME = "Set the ID for the repair enchantment.";
+	public static final String enchant_repair_rarity_NAME = "Set the rarity of the repair enchantment";
+	
+	public static final boolean DEFAULT_celestial = true;
+	public static final boolean DEFAULT_celestial_tools = true;
+	public static final int DEFAULT_repair_id = 156;
+	public static final int DEFAULT_repair_rarity = 1;
+	
+	public static boolean celestial;
+	public static boolean celestial_tools;
+	public static int repair_id;
+	public static int repair_rarity;
+	
+	private void syncConfig(){
+		FMLCommonHandler.instance().bus().register(modinstance);
+		
+		celestial = config.get(config.CATEGORY_GENERAL, celestial_NAME, DEFAULT_celestial).getBoolean(DEFAULT_celestial);
+		celestial_tools = config.get(config.CATEGORY_GENERAL, celestial_tools_NAME, DEFAULT_celestial_tools).getBoolean(DEFAULT_celestial_tools);
+		repair_id = config.get(config.CATEGORY_GENERAL, enchant_repair_NAME, DEFAULT_repair_id).getInt(DEFAULT_repair_id);
+		repair_rarity = config.get(config.CATEGORY_GENERAL, enchant_repair_rarity_NAME, DEFAULT_repair_rarity).getInt(DEFAULT_repair_rarity);
+		
+		if(config != null)
+			config.save();
+	}
+	
+	public void PreInit(FMLPreInitializationEvent e){
+		config = new Configuration(e.getSuggestedConfigurationFile());
+		syncConfig();
+	}
+	public void Init(){}
+	public void PostInit(){}
+	
+	
+	
+	public ConfigHandler(ToolsMod mod){
+		instance = this;
+		modinstance = mod;
+	}
+
+}

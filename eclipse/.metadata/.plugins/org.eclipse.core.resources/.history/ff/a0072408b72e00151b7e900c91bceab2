@@ -1,0 +1,46 @@
+package mamba2410.toolsmod3.item.tools.parts;
+
+import mamba2410.toolsmod3.item.base.SubItemCore;
+import mamba2410.toolsmod3.lib.MetadataItemNames;
+import mamba2410.toolsmod3.util.IconHelper;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class ToolHead extends SubItemCore{
+	
+	public ItemStack material;
+	public String type;
+	public static String[] names = MetadataItemNames.HeadNames.clone();
+
+	public ToolHead(String type) {
+		super("ToolHead" + type, "", names, type + "Head");
+		//setTextureName("minecraft:brick");
+		for(int i = 0; i < names.length; i++)
+		LanguageRegistry.instance().addStringLocalization("item." + names[i] + type + "Head.name", "en_US",
+				names[i] + " " + type + " Head");
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamage(int i) {
+		if(type == "Pick")
+			return IconHelper.getPickaxe(MetadataItemNames.HeadNames[i], "Head");
+		if(type == "Axe")
+			return IconHelper.getAxe(MetadataItemNames.HeadNames[i], "Head");
+		if(type == "Spade")
+			return IconHelper.getSpade(MetadataItemNames.HeadNames[i], "Head");
+		if(type == "Sword")
+			return IconHelper.getSword(MetadataItemNames.HeadNames[i], "Head");
+		else
+			return IconHelper.getHoe(MetadataItemNames.HeadNames[i], "Head");
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister par1IconRegister) {}
+
+}
