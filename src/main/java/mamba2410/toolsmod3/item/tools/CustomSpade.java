@@ -2,6 +2,7 @@ package mamba2410.toolsmod3.item.tools;
 
 import mamba2410.toolsmod3.util.IconHelper;
 import mamba2410.toolsmod3.util.ToolHelper;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
@@ -17,14 +18,16 @@ public class CustomSpade extends ItemSpade {
 	String igname = "";
 	String unlocalname;
 	ToolMaterial mat;
+	boolean instant = false;
 
-	public CustomSpade(ToolMaterial mat) {
+	public CustomSpade(ToolMaterial mat, boolean instant) {
 		super(mat);
 		unlocalname = mat.name() + "Spade";
 		setUnlocalizedName(unlocalname);
 		setTextureName("minecraft:iron_shovel");
 		setCreativeTab(null);
 		this.mat = mat;
+		this.instant = instant;
 		igname = ToolHelper.getLocalFromName(ToolHelper.getHeadNameFromToolMat(mat)) + " Spade";
 		
 		registering(unlocalname, igname);
@@ -39,7 +42,7 @@ public class CustomSpade extends ItemSpade {
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int num, boolean bln) {
 		String name = ToolHelper.getHeadNameFromToolMat(mat);
-		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrreqular")){
+		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrregular")){
 			stack.setItemDamage(0);
 		}
 	};
@@ -70,5 +73,11 @@ public class CustomSpade extends ItemSpade {
 	@SideOnly(Side.CLIENT)
 	public final int getRenderPasses(int metadata) {
 		return 2;
+	}
+	
+	@Override
+	public float getDigSpeed(ItemStack stack, Block block, int meta) {
+		if(instant) return Float.POSITIVE_INFINITY; else
+		return super.getDigSpeed(stack, block, meta);
 	}
 }

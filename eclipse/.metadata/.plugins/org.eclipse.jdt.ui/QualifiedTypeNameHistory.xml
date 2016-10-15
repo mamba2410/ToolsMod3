@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.Mod"/>
-<fullyQualifiedTypeName name="cpw.mods.fml.common.registry.LanguageRegistry"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="codechicken.nei.api.API"/>
@@ -9,7 +8,6 @@
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.item.tools.parts.ToolRod"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.lib.MetadataItemNames"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.lib.References"/>
-<fullyQualifiedTypeName name="net.minecraft.item.Item"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.util.ItemHandler"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.block.base.OreCore"/>
@@ -17,12 +15,10 @@
 <fullyQualifiedTypeName name="cpw.mods.fml.common.IWorldGenerator"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.registry.GameRegistry"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.world.ToolsModWorldGenerator"/>
-<fullyQualifiedTypeName name="mamba2410.toolsmod3.util.LogHelper"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.item.crafting.ShapelessRecipe"/>
 <fullyQualifiedTypeName name="net.minecraftforge.common.ChestGenHooks"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.util.DungeonLootHandler"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.item.base.SubFoodCore"/>
-<fullyQualifiedTypeName name="net.minecraftforge.oredict.OreDictionary"/>
 <fullyQualifiedTypeName name="net.minecraft.init.Blocks"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.util.ToolHelper"/>
 <fullyQualifiedTypeName name="net.minecraftforge.common.MinecraftForge"/>
@@ -49,4 +45,10 @@
 <fullyQualifiedTypeName name="net.minecraftforge.common.config.Property"/>
 <fullyQualifiedTypeName name="net.minecraft.entity.Entity"/>
 <fullyQualifiedTypeName name="mamba2410.toolsmod3.util.CreativeTabsHandler"/>
+<fullyQualifiedTypeName name="net.minecraft.item.Item"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.Loader"/>
+<fullyQualifiedTypeName name="net.minecraft.util.EnumChatFormatting"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.registry.LanguageRegistry"/>
+<fullyQualifiedTypeName name="mamba2410.toolsmod3.util.LogHelper"/>
+<fullyQualifiedTypeName name="net.minecraftforge.oredict.OreDictionary"/>
 </qualifiedTypeNameHistroy>

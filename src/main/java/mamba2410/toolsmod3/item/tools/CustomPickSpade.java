@@ -22,19 +22,21 @@ public class CustomPickSpade extends ItemPickaxe{
 	ToolMaterial mat;
 	String igname = "";
 	String unlocalname;
+	boolean instant = false;
 	
 	private Block[] invalidBlocks = {Blocks.air, Blocks.bedrock, Blocks.command_block};
 	private Material[] mats = {Material.circuits, Material.clay, Material.craftedSnow, Material.glass,
 			Material.grass, Material.ground, Material.ice, Material.iron,
 			Material.packedIce, Material.piston, Material.rock, Material.sand, Material.snow};
 
-	public CustomPickSpade(ToolMaterial mat) {
+	public CustomPickSpade(ToolMaterial mat, boolean instant) {
 		super(mat);
 		unlocalname = mat.name() + "PickSpade";
 		setUnlocalizedName(unlocalname);
 		setTextureName("minecraft:iron_pickaxe");
 		setCreativeTab(null);
 		this.mat = mat;
+		this.instant = instant;
 		
 		igname = ToolHelper.getLocalFromName(ToolHelper.getHeadNameFromToolMat(mat)) + " Excavator";
 		
@@ -44,7 +46,7 @@ public class CustomPickSpade extends ItemPickaxe{
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int num, boolean bln) {
 		String name = ToolHelper.getHeadNameFromToolMat(mat);
-		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrreqular")){
+		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrregular")){
 			stack.setItemDamage(0);
 		}
 	};
@@ -85,11 +87,13 @@ public class CustomPickSpade extends ItemPickaxe{
 	
 	@Override
 	public float getDigSpeed (ItemStack stack, Block block, int meta){
+		if(instant) return Float.POSITIVE_INFINITY; else{
 		for(int i = 0; i < mats.length; i++){
 			if(block.getMaterial()==mats[i])
 				return efficiencyOnProperMaterial;
 		}
 		return super.getDigSpeed(stack, block, meta);
+		}
 	}
 	
 	/*

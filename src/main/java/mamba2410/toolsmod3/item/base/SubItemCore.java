@@ -23,7 +23,6 @@ public class SubItemCore extends SubItemBase{
 	public IIcon tailIcon = null;
 	private String tnp;
 	
-	
 	public SubItemCore(String unlocalizedname, String texturenameprefix, String[] names, String[] local){
 		this.setUnlocalizedName(unlocalizedname);
 		this.setCreativeTab(CreativeTabsHandler.modtab);
@@ -42,11 +41,11 @@ public class SubItemCore extends SubItemBase{
 		this.setHasSubtypes(true);
 		this.types = names.length;
 		this.names = names.clone();
+		this.tnp = texturenameprefix;
 		for(int i = 0; i < names.length; i++)
 			this.names[i] += suffix;
 		for(int i = 0; i < names.length; i++)
 			LanguageRegistry.instance().addStringLocalization("item." + this.names[i] + ".name", "en_US", local[i]);
-		this.tnp = texturenameprefix;
 	}
 	
 	public SubItemCore(String unlocalizedname, String texturenameprefix, String[] names){
@@ -94,7 +93,7 @@ public class SubItemCore extends SubItemBase{
 		for(int i = 0; i < icons.length; i++)
 			icons[i] = IconHelper.forName(par1IconRegister, names[i].toLowerCase(), tnp);
 
-		//tailIcon = IconHelper.forName(par1IconRegister, "tail", tnp);
+		tailIcon = IconHelper.forName(par1IconRegister, "tail", tnp);
 	}
 
 }

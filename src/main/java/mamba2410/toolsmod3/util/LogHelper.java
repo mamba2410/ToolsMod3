@@ -12,11 +12,11 @@ public class LogHelper {
 		FMLLog.log(References.NAME, loglevel, String.valueOf(object));
 	}
 	
-	public static void all(Object o){log(Level.ALL, o);}
-	public static void debug(Object o){log(Level.DEBUG, o);}
-	public static void error(Object o){log(Level.ERROR, o);}
-	public static void warn(Object o){log(Level.WARN, o);}
-	public static void info(Object o){log(Level.INFO, o);}
-	public static void off(Object o){log(Level.OFF, o);}
+	public static void all(String s, Object... o){log(Level.ALL, String.format(s, o));}
+	public static void debug(String s, Object... o){log(Level.DEBUG, String.format(s, o));}
+	public static void error(String s, Object... o){log(Level.ERROR, String.format(s, o));}
+	public static void warn(String s, Object... o){log(Level.WARN, String.format(s, o));}
+	public static void info(String s, Object... o){log(Level.INFO, String.format(s, o));}
+	public static void off(String s, Object... o){log(Level.OFF, String.format(s, o));}
 
 }

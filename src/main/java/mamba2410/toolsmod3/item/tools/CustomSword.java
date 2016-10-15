@@ -41,7 +41,7 @@ public class CustomSword extends ItemSword{
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int num, boolean bln) {
 		String name = ToolHelper.getHeadNameFromToolMat(mat);
-		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrreqular")){
+		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrregular")){
 			stack.setItemDamage(0);
 		}
 	};

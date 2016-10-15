@@ -6,6 +6,7 @@ import mamba2410.toolsmod3.block.base.OreCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockHandler {
 	
@@ -14,6 +15,7 @@ public class BlockHandler {
 	
 	public static BlockCore sapphireOre, energeriumOre, fluxiniteOre;
 	public static BlockCore bedrockOre, platinumOre;
+	//public static BlockCore 
 	
 	private void initBlocks(){
 		
@@ -35,12 +37,21 @@ public class BlockHandler {
 		platinumOre.addDetails(4.0f, 3.0f, 3, "pickaxe");
 	}
 	
+	private void oreDict(){
+		OreDictionary.registerOre("orePlatinum", platinumOre);
+		OreDictionary.registerOre("oreSapphire", sapphireOre);
+		OreDictionary.registerOre("oreEnergerium", energeriumOre);
+		OreDictionary.registerOre("oreFluxinite", fluxiniteOre);
+	}
+	
 	public void PreInit(){
 		initBlocks();
 		addDetails();
 	}
 	public void Init(){}
-	public void PostInit(){}
+	public void PostInit(){
+		oreDict();
+	}
 	
 	public BlockHandler(ToolsMod mod){
 		instance = this;

@@ -2,6 +2,7 @@ package mamba2410.toolsmod3;
 
 import mamba2410.toolsmod3.lib.ProxyCommon;
 import mamba2410.toolsmod3.lib.References;
+import mamba2410.toolsmod3.tconstruct.TConstructHandler;
 import mamba2410.toolsmod3.util.BlockHandler;
 import mamba2410.toolsmod3.util.ConfigHandler;
 import mamba2410.toolsmod3.util.CreativeTabsHandler;
@@ -10,6 +11,7 @@ import mamba2410.toolsmod3.util.ItemHandler;
 import mamba2410.toolsmod3.util.LogHelper;
 import mamba2410.toolsmod3.util.UtilEventHandler;
 import mamba2410.toolsmod3.world.ToolsModWorldGenerator;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -21,8 +23,10 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid=References.MODID, name=References.NAME, version=References.VERSION, dependencies=References.DEPENCENCIES)
+@Mod(modid=References.MODID, name=References.NAME, version=References.VERSION /*dependencies=References.DEPENCENCIES*/)
 public class ToolsMod {
+	
+	public static boolean tconstructloaded = false;
 	
 	@Instance(References.MODID)
 	public static ToolsMod instance;
@@ -36,6 +40,7 @@ public class ToolsMod {
 	@EventHandler
 	public void PreInit(FMLPreInitializationEvent e){
 		LogHelper.info("Pre Initialization Start");
+		tconstructloaded = Loader.isModLoaded("TConstruct");
 		initHandlers();
 		
 		confighandler.PreInit(e);
@@ -79,6 +84,9 @@ public class ToolsMod {
 		dungeonloothandler = new DungeonLootHandler(instance);
 		confighandler = new ConfigHandler(instance);
 		utileventhandler = new UtilEventHandler(instance);
+		
+		if(tconstructloaded)
+			tconstruct = new TConstructHandler(instance);
 	}
 	
 	public static ItemHandler itemhandler;
@@ -87,5 +95,6 @@ public class ToolsMod {
 	public static DungeonLootHandler dungeonloothandler;
 	public static ConfigHandler confighandler;
 	public static UtilEventHandler utileventhandler;
+	public static TConstructHandler tconstruct;
 
 }

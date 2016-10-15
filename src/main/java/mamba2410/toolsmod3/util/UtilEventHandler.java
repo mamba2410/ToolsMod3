@@ -44,12 +44,18 @@ public class UtilEventHandler {
 	
 	@SubscribeEvent
 	public void onPlayerHit(LivingHurtEvent e){
-		if(e.entityLiving instanceof EntityPlayer){
-			EntityPlayer p = (EntityPlayer)e.entityLiving;
+		if(e.entity != null && e.entityLiving != null){
+			if(e.entityLiving instanceof EntityPlayer){
+				EntityPlayer p = (EntityPlayer)e.entityLiving;
 			
-			if(p.getHeldItem().getItem() instanceof CustomNinjaken){
-				p.addPotionEffect(new PotionEffect(Potion.nightVision.id, 100, 1));
+				if(p.getHeldItem() != null){
+					if(p.isBlocking()){
+						if(p.getHeldItem().getItem() instanceof CustomNinjaken)
+							p.addPotionEffect(new PotionEffect(Potion.nightVision.id, 200, 1));
+					}
+				}
 			}
+		
 		}
 	}
 

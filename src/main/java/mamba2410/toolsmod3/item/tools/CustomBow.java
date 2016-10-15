@@ -46,7 +46,7 @@ public class CustomBow extends ItemBow{
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int num, boolean bln) {
 		String name_ = ToolHelper.getHeadNameFromString(name);
-		if(name_.equals("Universe") || name_.equals("GalaxyEllipse") || name_.equals("GalaxySpiral") || name_.equals("GalaxyIrreqular")){
+		if(name_.equals("Universe") || name_.equals("GalaxyEllipse") || name_.equals("GalaxySpiral") || name_.equals("GalaxyIrregular")){
 			stack.setItemDamage(0);
 		}
 	};

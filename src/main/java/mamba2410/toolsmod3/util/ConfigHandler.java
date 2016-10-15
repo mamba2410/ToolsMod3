@@ -20,13 +20,13 @@ public class ConfigHandler {
 	public static boolean celestial = true;
 	public static boolean celestial_tools = false;
 	public static int repair_id = 156;
-	public static int repair_rarity = 1;
+	public static int repair_rarity = 2;
 	
 	public static void syncConfig(){
 		celestial = loadBoolean("item.celestial.enabled", celestial_NAME, true);
 		celestial_tools = loadBoolean("item.tool.celestial.enabled", celestial_tools_NAME, false);
 		repair_id = loadInt("enchant.repair.id", enchant_repair_NAME, 156);
-		repair_rarity = loadInt("enchant.repair.rarity", enchant_repair_rarity_NAME, 1);
+		repair_rarity = loadInt("enchant.repair.rarity", enchant_repair_rarity_NAME, 2);
 		
 		if(config.hasChanged())
 			config.save();

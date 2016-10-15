@@ -68,7 +68,7 @@ public class ToolsModWorldGenerator implements IWorldGenerator{
 			int randPosY = rand.nextInt(16);
 			int randPosZ = chunkZ + rand.nextInt(16);
 
-			(new WorldGenMinable(BlockHandler.bedrockOre, 0, 5, Blocks.bedrock)).generate(world,rand, randPosX, randPosY, randPosZ);
+			(new WorldGenMinable(BlockHandler.bedrockOre, 5, Blocks.bedrock)).generate(world,rand, randPosX, randPosY, randPosZ);
 		}
 	}
 	

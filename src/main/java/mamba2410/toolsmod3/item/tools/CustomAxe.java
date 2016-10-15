@@ -2,6 +2,7 @@ package mamba2410.toolsmod3.item.tools;
 
 import mamba2410.toolsmod3.util.IconHelper;
 import mamba2410.toolsmod3.util.ToolHelper;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
@@ -17,13 +18,15 @@ public class CustomAxe extends ItemAxe{
 	String igname = "";
 	String unlocalname;
 	ToolMaterial mat;
+	boolean instant = false;
 
-	public CustomAxe(ToolMaterial mat) {
+	public CustomAxe(ToolMaterial mat, boolean instant) {
 		super(mat);
 		unlocalname = mat.name() + "Axe";
 		setUnlocalizedName(unlocalname);
 		setTextureName("minecraft:iron_axe");
 		setCreativeTab(null);
+		this.instant = instant;
 		this.mat = mat;
 		igname = ToolHelper.getLocalFromName(ToolHelper.getHeadNameFromToolMat(mat)) + " Axe";
 		
@@ -39,7 +42,7 @@ public class CustomAxe extends ItemAxe{
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int num, boolean bln) {
 		String name = ToolHelper.getHeadNameFromToolMat(mat);
-		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrreqular")){
+		if(name.equals("Universe") || name.equals("GalaxyEllipse") || name.equals("GalaxySpiral") || name.equals("GalaxyIrregular")){
 			stack.setItemDamage(0);
 		}
 	};
@@ -70,6 +73,12 @@ public class CustomAxe extends ItemAxe{
 	@SideOnly(Side.CLIENT)
 	public final int getRenderPasses(int metadata) {
 		return 2;
+	}
+	
+	@Override
+	public float getDigSpeed(ItemStack stack, Block block, int meta) {
+		if(instant) return Float.POSITIVE_INFINITY; else
+		return super.getDigSpeed(stack, block, meta);
 	}
 
 }

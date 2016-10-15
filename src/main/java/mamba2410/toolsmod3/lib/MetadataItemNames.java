@@ -14,6 +14,7 @@ public class MetadataItemNames {
 		"CrystalAlloy",		//8
 		"Platinum",			//9
 		"Void",				//10
+		
 		"EntropyStar",		//11
 		"PureStar",			//12
 		"EntropyNebula",	//13
@@ -58,6 +59,7 @@ public class MetadataItemNames {
 		"Capture3",					//3
 		"StarFuel0",				//4
 		"StarFuel1",				//5
+		
 		"EntropyStar",				//6
 		"PureStar",					//7
 		"EntropyNebula",			//8
@@ -66,6 +68,7 @@ public class MetadataItemNames {
 		"GalaxySpiral",				//11
 		"GalaxyEllipse",			//12
 		"UniverseItem",				//13
+		
 		"RawStar",					//14
 		"CookedStar"				//15
 	};

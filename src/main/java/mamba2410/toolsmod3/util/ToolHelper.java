@@ -38,7 +38,7 @@ public class ToolHelper {
 	private static HashMap<String, Float> durmod = new HashMap<String, Float>();
 	private static HashMap<String, Float> durmodbow = new HashMap<String, Float>();
 	
-	private static HashMap<String, ToolMaterial> custommats = new HashMap<String, ToolMaterial>();
+	public static HashMap<String, ToolMaterial> custommats = new HashMap<String, ToolMaterial>();
 	
 	public static String getNameFromBow(ItemStack head, ItemStack string){
 		String name = "default";
@@ -244,7 +244,10 @@ public class ToolHelper {
 		if(basedurability.get(getHeadName(head)) >= 1){
 			mat = EnumHelper.addToolMaterial(smat,
 				harvestlevels.get(getHeadName(head)),
-				(int)(basedurability.get(getHeadName(head)) * durmod.get(getRodName(rod))),
+				(int)(basedurability.get(
+						getHeadName(head))
+						* durmod.get(
+								getRodName(rod))),
 				efficiency.get(getHeadName(head)),
 				damage.get(getHeadName(head)),
 				enchantability.get(getHeadName(head)));
@@ -392,7 +395,7 @@ public class ToolHelper {
 			heads[i] = (String) headItems.keySet().toArray()[i];
 		}
 		
-		for(int i = 0; i < MetadataItemNames.HeadNames.length; i++){
+		for(int i = 0; i < heads.length; i++){
 			if(headItems.get(heads[i]) != null){
 				if(ihead.equals(headItems.get(heads[i]))){
 					head = heads[i];
@@ -410,7 +413,7 @@ public class ToolHelper {
 			rods[i] = (String) rodItems.keySet().toArray()[i];
 		}
 		
-		for(int i = 0; i < MetadataItemNames.RodNames.length; i++){
+		for(int i = 0; i < rods.length; i++){
 			if(rodItems.get(rods[i]) != null){
 				if(irod.equals(rodItems.get(rods[i]))){
 					rod = rods[i];
@@ -438,7 +441,7 @@ public class ToolHelper {
 		return rod;
 	}
 	
-	private static String getMaterialName(ItemStack ihead, ItemStack irod){
+	public static String getMaterialName(ItemStack ihead, ItemStack irod){
 		
 		String head = getHeadName(ihead);
 		String rod = getRodName(irod);
